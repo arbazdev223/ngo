@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7efe6;
+  --foreground: #1e1813;
+  --surface: #fff8f0;
+  --card: #fffdf9;
+  --line: rgba(111, 78, 52, 0.18);
+  --accent: #be5d3f;
+  --accent-strong: #8f3f29;
+  --gold: #d7a449;
+  --teal: #145b59;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-sks-body);
+  --font-display: var(--font-sks-display);
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(215, 164, 73, 0.16), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(20, 91, 89, 0.12), transparent 30%),
+    var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-sks-body), sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(190, 93, 63, 0.18);
+}
+
+.font-hindi {
+  font-family: var(--font-sks-hindi), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-sks-display), serif;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
