@@ -32,13 +32,15 @@ export default function OurWorkPage() {
             title="From migrant workers to slum communities, the work stays practical and local."
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {siteContent.workAreas.map((area, index) => (
             <AnimatedCard key={area.slug}>
               <AnimatedInView delay={0.05 * index}>
-                <article className="flex h-full flex-col rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_24px_60px_rgba(56,39,27,0.08)]">
+                <article className="flex h-full flex-col rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_24px_60px_rgba(56,39,27,0.08)] sm:p-7">
                   <p className="font-hindi text-sm text-accent">{area.title.hi}</p>
-                  <h2 className="font-display mt-3 text-3xl text-foreground">{area.title.en}</h2>
+                  <h2 className="font-display mt-3 text-2xl text-foreground sm:text-3xl">
+                    {area.title.en}
+                  </h2>
                   <p className="mt-4 text-sm leading-7 text-foreground/72">{area.summary}</p>
                   <p className="mt-4 text-sm leading-7 text-foreground/68">{area.detail}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
@@ -59,14 +61,14 @@ export default function OurWorkPage() {
       </SectionWrapper>
 
       <SectionWrapper tone="muted">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,340px)] lg:items-start">
           <AnimatedInView>
             <SectionHeading
               description="The work is designed to move from listening to organized response, which is why the site architecture makes it easy to see programs, trust signals, and participation pathways together."
               eyebrow={{ en: "How the work is approached" }}
               title="The goal is not visibility alone. The goal is dependable presence."
             />
-            <div className="mt-6 space-y-5 text-base leading-8 text-foreground/72">
+            <div className="mt-6 space-y-5 text-sm leading-7 text-foreground/72 sm:text-base sm:leading-8">
               <p>
                 Whether the issue is wage insecurity, schooling gaps, access to health support, or a need for legal guidance, the NGO&apos;s role is positioned as a local connector and organizer rather than a distant voice.
               </p>

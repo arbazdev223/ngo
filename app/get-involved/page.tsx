@@ -32,14 +32,14 @@ export default function GetInvolvedPage() {
             title="Volunteer energy and donor support are both essential to sustained fieldwork."
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2">
           <AnimatedCard>
             <AnimatedInView>
-              <article className="rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_24px_60px_rgba(56,39,27,0.08)]">
+              <article className="rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_24px_60px_rgba(56,39,27,0.08)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
                   Volunteer
                 </p>
-                <h2 className="font-display mt-4 text-3xl text-foreground">
+                <h2 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
                   {siteContent.getInvolvedPage.volunteerPanel.title}
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-foreground/72">
@@ -61,11 +61,11 @@ export default function GetInvolvedPage() {
 
           <AnimatedCard>
             <AnimatedInView delay={0.08}>
-              <article className="rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_24px_60px_rgba(56,39,27,0.08)]">
+              <article className="rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_24px_60px_rgba(56,39,27,0.08)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
                   Donate
                 </p>
-                <h2 className="font-display mt-4 text-3xl text-foreground">
+                <h2 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
                   {siteContent.getInvolvedPage.donatePanel.title}
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-foreground/72">

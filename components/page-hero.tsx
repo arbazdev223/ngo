@@ -33,22 +33,22 @@ export function PageHero({
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(19,16,13,0.88),rgba(19,16,13,0.48),rgba(19,16,13,0.65))]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[58svh] max-w-7xl items-end px-5 py-28 sm:px-6 lg:px-8 lg:py-32">
+      <div className="relative mx-auto flex min-h-[48svh] max-w-7xl items-end px-4 py-20 sm:min-h-[58svh] sm:px-6 sm:py-24 md:min-h-[68svh] lg:px-8 lg:py-32">
         <AnimatedInView className="max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#f2c978]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f2c978] sm:text-xs sm:tracking-[0.32em]">
             {eyebrow.en}
           </p>
           {eyebrow.hi ? (
-            <p className="font-hindi mt-3 text-sm text-white/80">{eyebrow.hi}</p>
+            <p className="font-hindi mt-3 text-xs text-white/80 sm:text-sm">{eyebrow.hi}</p>
           ) : null}
-          <h1 className="font-display mt-5 text-5xl leading-[0.92] text-white text-pretty sm:text-6xl lg:text-7xl">
+          <h1 className="font-display mt-5 text-3xl leading-[0.96] text-white text-pretty sm:text-5xl md:text-6xl lg:text-7xl">
             {title}
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-white/78 sm:text-lg">
+          <p className="mt-5 max-w-3xl text-sm leading-7 text-white/78 sm:mt-6 sm:text-base sm:leading-8 md:text-lg">
             {description}
           </p>
           {actions.length ? (
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
               {actions.map((action) => (
                 <ActionLink
                   className={

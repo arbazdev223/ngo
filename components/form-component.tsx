@@ -159,10 +159,12 @@ export function FormComponent({
       )}
     >
       <div className="max-w-xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.26em] text-accent">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent sm:text-xs sm:tracking-[0.26em]">
           {title}
         </p>
-        <h3 className="font-display mt-4 text-3xl text-foreground">{description}</h3>
+        <h3 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
+          {description}
+        </h3>
         <p className="mt-4 text-sm leading-7 text-foreground/68">{helperText}</p>
       </div>
 
@@ -178,7 +180,7 @@ export function FormComponent({
             </p>
           ) : null}
           <button
-            className="mt-5 rounded-full border border-line px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
+            className="mt-5 w-full rounded-full border border-line px-5 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent sm:w-auto"
             onClick={() => {
               setStatus("idle");
               setMessage("");
@@ -331,7 +333,7 @@ export function FormComponent({
           ) : null}
 
           <button
-            className="inline-flex min-w-44 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:-translate-y-0.5 hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white transition hover:-translate-y-0.5 hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-70 sm:min-w-44 sm:w-auto sm:tracking-[0.16em]"
             disabled={status === "loading"}
             type="submit"
           >

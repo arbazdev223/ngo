@@ -37,10 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${displayFont.variable} ${bodyFont.variable} ${hindiFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${hindiFont.variable} h-full overflow-x-hidden antialiased`}
       lang="en"
     >
-      <body className="min-h-full bg-background text-foreground">
+      <body className="min-h-full overflow-x-hidden bg-background text-foreground">
         <div className="flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>

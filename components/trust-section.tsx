@@ -28,15 +28,15 @@ export function TrustSection({
           title={title}
         />
       </AnimatedInView>
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
         {items.map((item, index) => (
           <AnimatedCard key={item.title}>
             <AnimatedInView delay={0.08 * index}>
-              <article className="h-full rounded-[2rem] border border-line bg-white/90 p-7 shadow-[0_24px_60px_rgba(56,40,29,0.08)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+              <article className="h-full rounded-[2rem] border border-line bg-white/90 p-6 shadow-[0_24px_60px_rgba(56,40,29,0.08)] sm:p-7">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent sm:text-xs sm:tracking-[0.24em]">
                   Trust signal
                 </p>
-                <h3 className="font-display mt-4 text-3xl text-foreground">
+                <h3 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
                   {item.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-foreground/72">

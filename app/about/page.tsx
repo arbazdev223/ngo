@@ -26,14 +26,14 @@ export default function AboutPage() {
       />
 
       <SectionWrapper tone="warm">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-start">
           <AnimatedInView>
             <SectionHeading
               description={siteContent.aboutPage.mission.description}
               eyebrow={{ en: "Mission and orientation" }}
               title={siteContent.aboutPage.mission.title}
             />
-            <p className="mt-6 max-w-3xl text-base leading-8 text-foreground/74">
+            <p className="mt-6 max-w-3xl text-sm leading-7 text-foreground/74 sm:text-base sm:leading-8">
               The NGO&apos;s public web presence is designed around the same principles that make fieldwork meaningful: proximity, patience, and practical support. The website avoids inflated claims and instead makes the work, documents, and contact pathways easier to understand.
             </p>
           </AnimatedInView>
@@ -43,7 +43,7 @@ export default function AboutPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
                 Delhi roots
               </p>
-              <h2 className="font-display mt-4 text-3xl text-foreground">
+              <h2 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
                 {siteContent.site.address}
               </h2>
               <p className="mt-4 text-sm leading-7 text-foreground/72">
@@ -60,10 +60,10 @@ export default function AboutPage() {
       </SectionWrapper>
 
       <SectionWrapper tone="muted">
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2">
           <AnimatedCard>
             <AnimatedInView>
-              <article className="h-full rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_22px_60px_rgba(56,39,27,0.08)]">
+              <article className="h-full rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_22px_60px_rgba(56,39,27,0.08)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-accent">
                   Goals
                 </p>
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
           <AnimatedCard>
             <AnimatedInView delay={0.08}>
-              <article className="h-full rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_22px_60px_rgba(56,39,27,0.08)]">
+              <article className="h-full rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_22px_60px_rgba(56,39,27,0.08)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-accent">
                   Objectives
                 </p>
@@ -102,7 +102,7 @@ export default function AboutPage() {
             title="Trust grows when documents, location, and purpose are easy to see."
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {siteContent.aboutPage.trustNotes.map((note, index) => (
             <AnimatedCard key={note}>
               <AnimatedInView delay={0.08 * index}>

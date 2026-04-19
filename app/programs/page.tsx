@@ -32,11 +32,11 @@ export default function ProgramsPage() {
             title="A future-ready content system for evolving NGO initiatives."
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {siteContent.programsSection.items.map((program, index) => (
             <AnimatedCard key={program.title}>
               <AnimatedInView delay={0.05 * index}>
-                <article className="flex h-full flex-col rounded-[2rem] border border-line bg-white/92 p-7 shadow-[0_24px_60px_rgba(56,39,27,0.08)]">
+                <article className="flex h-full flex-col rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_24px_60px_rgba(56,39,27,0.08)] sm:p-7">
                   <div className="flex items-center justify-between gap-3">
                     <span className="rounded-full bg-[#f7ede4] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
                       {program.theme}
@@ -45,7 +45,9 @@ export default function ProgramsPage() {
                       {program.format}
                     </span>
                   </div>
-                  <h2 className="font-display mt-5 text-3xl text-foreground">{program.title}</h2>
+                  <h2 className="font-display mt-5 text-2xl text-foreground sm:text-3xl">
+                    {program.title}
+                  </h2>
                   <p className="mt-4 text-sm leading-7 text-foreground/72">
                     {program.description}
                   </p>
@@ -63,7 +65,7 @@ export default function ProgramsPage() {
       </SectionWrapper>
 
       <SectionWrapper tone="muted">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,320px)] lg:items-start">
           <AnimatedInView>
             <SectionHeading
               description="Because the copy now lives in a central config file, each program card can expand later into richer stories, multilingual content, or deeper program pages without changing the site shell."

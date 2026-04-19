@@ -50,8 +50,8 @@ export default function HomePage() {
             />
           </AnimatedInView>
           <AnimatedInView delay={0.08}>
-            <div className="rounded-[2rem] border border-line bg-white/88 p-7 shadow-[0_24px_60px_rgba(56,39,27,0.08)]">
-              <div className="space-y-5 text-base leading-8 text-foreground/74">
+            <div className="rounded-[2rem] border border-line bg-white/88 p-6 shadow-[0_24px_60px_rgba(56,39,27,0.08)] sm:p-7">
+              <div className="space-y-5 text-sm leading-7 text-foreground/74 sm:text-base sm:leading-8">
                 {siteContent.aboutPreview.body.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -86,15 +86,17 @@ export default function HomePage() {
             title={siteContent.impactNarratives.title}
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {siteContent.impactNarratives.cards.map((card, index) => (
             <AnimatedCard key={card.title}>
               <AnimatedInView delay={0.08 * index}>
-                <article className="h-full rounded-[2rem] border border-line bg-white/90 p-7 shadow-[0_22px_55px_rgba(56,39,27,0.08)]">
+                <article className="h-full rounded-[2rem] border border-line bg-white/90 p-6 shadow-[0_22px_55px_rgba(56,39,27,0.08)] sm:p-7">
                   <span className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
                     Step {index + 1}
                   </span>
-                  <h3 className="font-display mt-4 text-3xl text-foreground">{card.title}</h3>
+                  <h3 className="font-display mt-4 text-2xl text-foreground sm:text-3xl">
+                    {card.title}
+                  </h3>
                   <p className="mt-4 text-sm leading-7 text-foreground/72">{card.body}</p>
                 </article>
               </AnimatedInView>
@@ -112,13 +114,15 @@ export default function HomePage() {
             title="Support that starts locally and grows through trust."
           />
         </AnimatedInView>
-        <div className="mt-12 grid gap-5 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {featuredWorkAreas.map((area, index) => (
             <AnimatedCard key={area.slug}>
               <AnimatedInView delay={0.06 * index}>
                 <article className="flex h-full flex-col rounded-[2rem] border border-line bg-white/90 p-6 shadow-[0_22px_60px_rgba(56,39,27,0.08)]">
                   <p className="font-hindi text-sm text-accent">{area.title.hi}</p>
-                  <h3 className="font-display mt-3 text-3xl text-foreground">{area.title.en}</h3>
+                  <h3 className="font-display mt-3 text-2xl text-foreground sm:text-3xl">
+                    {area.title.en}
+                  </h3>
                   <p className="mt-4 text-sm leading-7 text-foreground/72">{area.summary}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {area.outcomes.map((outcome) => (
