@@ -93,20 +93,50 @@ export interface LeadSubmissionResult {
   referenceId?: string;
 }
 
-export const registrationProofHref = encodeURI(
-  "/Shehri Kamgar Samaj society Registration certificate (1).pdf",
+export const ngoDetailsHref = encodeURI(
+  "/imsge/WhatsApp Image 2026-07-05 at 11.50.39 AM.jpeg",
 );
 
-export const ngoDetailsHref = encodeURI(
-  "/Shehri Kamgar Samaj Ki Details (1).pdf",
+export const aboutDetailsHref = encodeURI(
+  "/imsge/WhatsApp Image 2026-07-05 at 11.50.39 AM.jpeg",
 );
+
+const heroImageSrc = (path: string) => `${encodeURI(path)}?v=hero-crop-20260816`;
 
 const heroPoster: MediaAsset = {
-  src: "/imsge/pick1.jpeg",
+  src: heroImageSrc("/imsge/WhatsApp Image 2026-07-05 at 11.50.39 AM.jpeg"),
   alt: "Women seated together during a community support meeting led by Shehri Kamgar Samaj.",
   width: 1280,
   height: 957,
 };
+
+const aboutPoster: MediaAsset = {
+  src: encodeURI("/imsge/WhatsApp Image 2026-04-06 at 6.23.19 PM (1).jpeg"),
+  alt: "Women seated together during a community support meeting led by Shehri Kamgar Samaj.",
+  width: 1280,
+  height: 957,
+};
+
+const heroCarouselImages: MediaAsset[] = [
+  {
+    src: heroImageSrc("/imsge/WhatsApp Image 2026-04-06 at 6.23.16 PM.jpeg"),
+    alt: "Shehri Kamgar Samaj field team during a community outreach visit.",
+    width: 1600,
+    height: 955,
+  },
+  {
+    src: heroImageSrc("/imsge/IMG_20240928_180031606_AE.jpg.jpeg"),
+    alt: "A facilitator seated with young girls and women during a group session indoors.",
+    width: 4080,
+    height: 3072,
+  },
+  {
+    src: heroImageSrc("/imsge/IMG_20250416_145857488_HDR.jpg.jpeg"),
+    alt: "Community members gathered together during a field activity led by the NGO.",
+    width: 8160,
+    height: 6144,
+  },
+];
 
 export const siteContent = {
   site: {
@@ -114,11 +144,11 @@ export const siteContent = {
     shortName: "SKS",
     tagline: {
       en: "Urban dignity, worker rights, and community resilience.",
-      hi: "शहरी गरिमा, कामगार अधिकार और सामुदायिक मजबूती",
+      hi: "शहरी कामगार समाज",
     },
     description:
       "A Delhi-rooted NGO supporting migrant workers, low-income settlements, and urban families through awareness, legal support, education, health, and community-led action.",
-    address: "B-954, Gautampuri Phase-II, Badarpur, New Delhi",
+    address: "B-954, Gautampuri Phase-II, Molarband Badapur, New Delhi",
     cityLabel: "Delhi field presence",
   },
   navigation: [
@@ -126,6 +156,7 @@ export const siteContent = {
     { label: "About", href: "/about" },
     { label: "Our Work", href: "/our-work" },
     { label: "Programs", href: "/programs" },
+    { label: "Gallery", href: "/gallery" },
     { label: "Get Involved", href: "/get-involved" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavItem[],
@@ -159,9 +190,7 @@ export const siteContent = {
     ],
     media: {
       poster: heroPoster,
-      videoSrc: encodeURI("/imsge/WhatsApp Video 2026-04-06 at 6.23.13 PM.mp4"),
-      heavyVideoNotice:
-        "A larger 4 minute video remains available in the gallery, but is intentionally excluded from the homepage load path.",
+      carouselImages: heroCarouselImages,
     },
     floatingCard: {
       title: "What the work looks like on the ground",
@@ -189,6 +218,48 @@ export const siteContent = {
       { label: "View NGO Details", href: ngoDetailsHref, variant: "ghost" },
     ] satisfies ActionItem[],
   },
+  homeCtaTiles: {
+    eyebrow: {
+      en: "Three ways in",
+      hi: "जुड़ने के तीन रास्ते",
+    },
+    title: "Explore the work, support it, or start a conversation.",
+    items: [
+      {
+        label: "How We Work",
+        description: "See the full range of focus areas and how programs are run.",
+        href: "/our-work",
+        image: {
+          src: "/imsge/IMG_20250104_114218666_AE.jpg.jpeg",
+          alt: "Field activity taking place in a dense Delhi neighborhood lane.",
+          width: 3072,
+          height: 4080,
+        },
+      },
+      {
+        label: "Support Our Cause",
+        description: "Volunteer your time or help sustain field visits and programs.",
+        href: "/get-involved#donate",
+        image: {
+          src: "/imsge/pick1.jpeg",
+          alt: "A group of women attending a community meeting and listening to notes being read out.",
+          width: 1280,
+          height: 957,
+        },
+      },
+      {
+        label: "Contact Us",
+        description: "Reach out for coordination, partnerships, or general questions.",
+        href: "/contact",
+        image: {
+          src: "/imsge/pick4.jpg - Copy.jpg",
+          alt: "Two women in conversation during a neighborhood interaction.",
+          width: 3072,
+          height: 4080,
+        },
+      },
+    ],
+  },
   trustSection: {
     eyebrow: {
       en: "Trust built through local presence",
@@ -201,9 +272,7 @@ export const siteContent = {
       {
         title: "Registered under Society Act 1860",
         description:
-          "Registration proof is referenced directly on the site so supporters can see a formal trust signal, not just a claim.",
-        ctaLabel: "View Certificate",
-        href: registrationProofHref,
+          "The organization presents its identity through its address, programs, and public-facing documentation.",
       },
       {
         title: "Field presence in Badarpur, New Delhi",
@@ -571,12 +640,11 @@ export const siteContent = {
         en: "About the organization",
         hi: "संस्था के बारे में",
       },
-      title: "A Delhi-based NGO growing from field presence, trust, and community listening.",
+      title: "",
       description:
         "Shehri Kamgar Samaj is oriented toward urban workers, low-income settlements, women, and families who need support that is practical, respectful, and reachable.",
-      image: heroPoster,
+      image: aboutPoster,
       actions: [
-        { label: "View Registration Proof", href: registrationProofHref, variant: "secondary" },
         { label: "Read NGO Details", href: ngoDetailsHref, variant: "ghost" },
       ] satisfies ActionItem[],
     },
@@ -684,7 +752,7 @@ export const siteContent = {
       description:
         "The contact experience keeps the Delhi address visible and invites thoughtful outreach through a structured inquiry form.",
       image: {
-        src: "/imsge/pick4.jpg.jpeg",
+        src: "/imsge/pick4.jpg - Copy.jpg",
         alt: "Two women in conversation during a neighborhood interaction.",
         width: 3072,
         height: 4080,
@@ -693,24 +761,24 @@ export const siteContent = {
     channels: [
       {
         label: "Address",
-        value: "B-954, Gautampuri Phase-II, Badarpur, New Delhi",
+        value: "B-954, Gautampuri Phase-II, Molarband Badapur, New Delhi",
         isVisible: true,
       },
       {
         label: "Phone",
-        isVisible: false,
-        note: "Phone number will be added here after verification.",
+        value: "9810787686, 9953310556",
+        isVisible: true,
       },
       {
         label: "Email",
-        isVisible: false,
-        note: "Email address will be added here after verification.",
+        value: "shehrikamgarsamaj@gmail.com",
+        isVisible: true,
       },
     ] satisfies ContactChannel[],
     socialLinks: [] as { label: string; href?: string; isVisible: boolean }[],
     notes: [
       "Use the form for the fastest current follow-up path.",
-      "Phone and email will be published once the NGO confirms the preferred public contact details.",
+      "Call or email directly for urgent coordination and volunteer follow-up.",
       "Delhi location is shown prominently to strengthen trust and offline discoverability.",
     ],
   },
@@ -720,12 +788,12 @@ export const siteContent = {
     quickLinks: [
       { label: "About Us", href: "/about" },
       { label: "Programs", href: "/programs" },
+      { label: "Gallery", href: "/gallery" },
       { label: "Get Involved", href: "/get-involved" },
       { label: "Contact", href: "/contact" },
     ] satisfies NavItem[],
     documents: [
-      { label: "Registration Certificate", href: registrationProofHref },
-      { label: "NGO Details PDF", href: ngoDetailsHref },
+      { label: "NGO Details Image", href: ngoDetailsHref },
     ] satisfies ActionItem[],
   },
 };

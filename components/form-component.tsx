@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import type { LeadIntent, LeadSubmissionResult } from "@/content/config";
 import { cn, isValidPhone } from "@/lib/utils";
@@ -57,6 +57,7 @@ export function FormComponent({
   const [errors, setErrors] = useState<Partial<Record<keyof FormValues, string>>>(
     {},
   );
+  const isSubmittingRef = useRef(false);
 
 
   const helperText = useMemo(() => {
@@ -104,12 +105,17 @@ export function FormComponent({
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (isSubmittingRef.current || status === "loading") {
+      return;
+    }
+
     if (!validate()) {
       setStatus("error");
       setMessage("Please review the highlighted fields and try again.");
       return;
     }
 
+    isSubmittingRef.current = true;
     setStatus("loading");
     setMessage("");
 
@@ -148,6 +154,8 @@ export function FormComponent({
     } catch {
       setStatus("error");
       setMessage("The submission could not be completed right now. Please try again.");
+    } finally {
+      isSubmittingRef.current = false;
     }
   };
 

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface SiteLogoProps {
   className?: string;
   compact?: boolean;
-}
+} 
 
 export function SiteLogo({ className, compact = false }: SiteLogoProps) {
   return (
@@ -20,12 +20,15 @@ export function SiteLogo({ className, compact = false }: SiteLogoProps) {
         SKS
       </span>
       <span className="flex min-w-0 flex-col">
-        <span className="font-display truncate text-sm leading-none tracking-[0.08em] text-foreground uppercase sm:text-lg sm:tracking-[0.12em]">
-          {compact ? "Shehri Kamgar" : siteContent.site.name}
+        <b>
+        <span className="font-inherit truncate text-sm leading-none tracking-[0.08em] text-foreground uppercase sm:text-lg sm:tracking-[0.12em]">
+          {compact ? "Shehri Kamgar Samaj" : siteContent.site.name}
         </span>
-        <span className="font-hindi hidden text-[11px] text-foreground/70 sm:block">
+
+        <span className="font-hindi hidden text-[18px] text-foreground/70 sm:block  ">
           {siteContent.site.tagline.hi}
         </span>
+        </b>
       </span>
     </Link>
   );

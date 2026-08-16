@@ -38,7 +38,6 @@ export function SectionWrapper({
       id={id}
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(190,93,63,0.35),transparent)]" />
-      <div className="pointer-events-none absolute left-1/2 top-0 h-44 w-[44rem] max-w-[140vw] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(215,164,73,0.14),transparent_65%)] blur-2xl sm:w-[62rem]" />
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {children}
       </div>

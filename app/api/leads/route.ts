@@ -15,6 +15,30 @@ function badRequest(message: string, status = 400) {
   return Response.json(payload, { status });
 }
 
+function methodNotAllowed() {
+  return Response.json(
+    {
+      ok: false,
+      message: "Method not allowed.",
+    } satisfies LeadSubmissionResult,
+    { status: 405 },
+  );
+}
+
+function serverError(message: string) {
+  return Response.json(
+    {
+      ok: false,
+      message,
+    } satisfies LeadSubmissionResult,
+    { status: 500 },
+  );
+}
+
+export async function GET() {
+  return methodNotAllowed();
+}
+
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
 
@@ -72,10 +96,10 @@ export async function POST(request: Request) {
   try {
     const result = await leadAdapter.submitLead(payload);
     return Response.json(result);
-  } catch {
-    return badRequest(
-      "The submission was received, but the server could not finish processing it right now.",
-      500,
+  } catch (error) {
+    console.error("[api/leads] submission failed", error);
+    return serverError(
+      "The submission could not be completed right now. Please try again later.",
     );
   }
 }

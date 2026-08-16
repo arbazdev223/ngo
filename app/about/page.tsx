@@ -5,7 +5,6 @@ import { CTASection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { SectionWrapper } from "@/components/section-wrapper";
-import { TrustSection } from "@/components/trust-section";
 import { siteContent } from "@/content/config";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -18,6 +17,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        contentClassName="translate-y-12 sm:translate-y-16 lg:translate-y-20"
         actions={siteContent.aboutPage.hero.actions}
         description={siteContent.aboutPage.hero.description}
         eyebrow={siteContent.aboutPage.hero.eyebrow}
@@ -65,7 +65,7 @@ export default function AboutPage() {
             <AnimatedInView>
               <article className="h-full rounded-[2rem] border border-line bg-white/92 p-6 shadow-[0_22px_60px_rgba(56,39,27,0.08)] sm:p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.26em] text-accent">
-                  Goals
+                  Vision
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-foreground/74">
                   {siteContent.aboutPage.goals.map((goal) => (
@@ -93,7 +93,7 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper tone="warm">
+      {/* <SectionWrapper tone="warm">
         <AnimatedInView>
           <SectionHeading
             align="center"
@@ -116,14 +116,14 @@ export default function AboutPage() {
             </AnimatedCard>
           ))}
         </div>
-      </SectionWrapper>
+      </SectionWrapper> */}
 
-      <TrustSection
+      {/* <TrustSection
         description={siteContent.trustSection.description}
         eyebrow={siteContent.trustSection.eyebrow}
         items={siteContent.trustSection.items}
         title={siteContent.trustSection.title}
-      />
+      /> */}
 
       <CTASection
         actions={siteContent.ctaBand.actions}

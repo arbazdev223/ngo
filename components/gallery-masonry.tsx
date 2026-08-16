@@ -83,11 +83,11 @@ export function GalleryMasonry({ items }: GalleryMasonryProps) {
                     </span>
                   ) : null}
                 </div>
-                <p className="mt-3 text-sm leading-7 text-white/82">{item.caption}</p>
+                <p className="mt-3 text-[20px] text-[#f1a10d] leading-7 ">{item.caption}</p>
               </div>
               {item.kind === "video" ? (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black/45 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-black/45 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md">
                     Play
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export function GalleryMasonry({ items }: GalleryMasonryProps) {
                   {activeItem.kind === "image" ? (
                     <Image
                       alt={activeItem.alt}
-                      className="max-h-[60vh] w-auto object-contain sm:max-h-[78vh]"
+                      className="max-h-[60vh] w-auto object-contain sm:max-h-[78vh] "
                       height={activeItem.height}
                       sizes="90vw"
                       src={activeItem.src}

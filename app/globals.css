@@ -59,6 +59,25 @@ a {
   text-decoration: none;
 }
 
+p,
+li,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-sks-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sks-display), serif;
+  font-weight: 500;
+}
+
 ::selection {
   background: rgba(190, 93, 63, 0.18);
 }
